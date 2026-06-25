@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: rice-leaf-hybrid-cnn
+Version: 0.1.0
+Summary: Experimental hybrid CNN project for rice leaf disease classification
+Requires-Python: >=3.10
