@@ -1,0 +1,25 @@
+FROM python:3.10-slim
+
+WORKDIR /workspace
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PIP_NO_CACHE_DIR=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    libglib2.0-0 \
+    libgl1 \
+    libsm6 \
+    libxext6 \
+    libxrender1 \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt /workspace/requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt
+
+COPY . /workspace
+RUN pip install -e .
+
+ENTRYPOINT ["bash", "docker/entrypoint.sh"]
+CMD ["python", "scripts/00_check_environment.py"]

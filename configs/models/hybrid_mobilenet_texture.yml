@@ -1,0 +1,8 @@
+model:
+  type: hybrid_mobilenet_texture
+  pretrained: true
+  freeze_backbone: false
+  texture_hidden_dim: 128
+  fusion_hidden_dim: 256
+  dropout: 0.3
+  num_classes: 4

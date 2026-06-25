@@ -1,0 +1,50 @@
+defaults:
+  - ../default.yml
+
+experiment:
+  id: E3
+  name: proposed_segmented_cnn_texture
+  description: Modelo propuesto: MobileNetV2 con imagen segmentada y vector GLCM+DWT desde ROI.
+
+data:
+  use_segmented_images: true
+  use_texture_features: true
+  texture_source: segmented
+
+model:
+  type: hybrid_mobilenet_texture
+  pretrained: true
+  freeze_backbone: false
+  num_classes: 4
+  dropout: 0.3
+  texture_hidden_dim: 128
+  fusion_hidden_dim: 256
+
+segmentation:
+  enabled: true
+  method: lab_otsu_morphology
+  color_space: lab
+  channel: a
+  threshold: otsu
+  invert_mask: false
+  morphology:
+    opening: true
+    closing: true
+    kernel_size: 5
+    iterations: 1
+  output_mode: masked_rgb
+
+features:
+  enabled: true
+  methods: [glcm, dwt]
+  source: segmented
+  normalize: true
+  glcm:
+    distances: [1, 2, 4]
+    angles: [0, 0.78539816339, 1.57079632679, 2.35619449019]
+    levels: 32
+    properties: [contrast, dissimilarity, homogeneity, energy, correlation, ASM]
+  dwt:
+    wavelet: db2
+    level: 2
+    stats: [mean, std, energy, entropy]

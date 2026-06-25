@@ -1,0 +1,16 @@
+services:
+  riceleaf-cpu:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.cpu
+    container_name: riceleaf-cpu
+    working_dir: /workspace
+    volumes:
+      - ..:/workspace
+      - ../data:/workspace/data
+      - ../runs:/workspace/runs
+      - ../outputs:/workspace/outputs
+    env_file:
+      - ../.env
+    stdin_open: true
+    tty: true

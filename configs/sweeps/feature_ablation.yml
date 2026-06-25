@@ -1,0 +1,7 @@
+sweep:
+  name: feature_ablation
+  values:
+    features.methods:
+      - [glcm]
+      - [dwt]
+      - [glcm, dwt]

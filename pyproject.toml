@@ -1,0 +1,15 @@
+[project]
+name = "rice-leaf-hybrid-cnn"
+version = "0.1.0"
+description = "Experimental hybrid CNN project for rice leaf disease classification"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100

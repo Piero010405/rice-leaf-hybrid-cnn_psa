@@ -1,0 +1,5 @@
+features:
+  enabled: true
+  methods: [dwt]
+  source: segmented
+  normalize: true

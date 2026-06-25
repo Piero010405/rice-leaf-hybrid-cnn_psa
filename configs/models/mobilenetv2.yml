@@ -1,0 +1,6 @@
+model:
+  type: mobilenetv2
+  pretrained: true
+  freeze_backbone: false
+  num_classes: 4
+  dropout: 0.2

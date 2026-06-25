@@ -1,0 +1,50 @@
+defaults:
+  - ../default.yml
+
+experiment:
+  id: E2
+  name: cnn_texture
+  description: MobileNetV2 con imagen original más vector explícito GLCM+DWT.
+
+data:
+  use_segmented_images: false
+  use_texture_features: true
+  texture_source: original
+
+model:
+  type: hybrid_mobilenet_texture
+  pretrained: true
+  freeze_backbone: false
+  num_classes: 4
+  dropout: 0.3
+  texture_hidden_dim: 128
+  fusion_hidden_dim: 256
+
+segmentation:
+  enabled: false
+  method: lab_otsu_morphology
+  color_space: lab
+  channel: a
+  threshold: otsu
+  invert_mask: false
+  morphology:
+    opening: true
+    closing: true
+    kernel_size: 5
+    iterations: 1
+  output_mode: masked_rgb
+
+features:
+  enabled: true
+  methods: [glcm, dwt]
+  source: original
+  normalize: true
+  glcm:
+    distances: [1, 2, 4]
+    angles: [0, 0.78539816339, 1.57079632679, 2.35619449019]
+    levels: 32
+    properties: [contrast, dissimilarity, homogeneity, energy, correlation, ASM]
+  dwt:
+    wavelet: db2
+    level: 2
+    stats: [mean, std, energy, entropy]

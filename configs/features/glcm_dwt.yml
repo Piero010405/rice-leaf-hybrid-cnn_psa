@@ -1,0 +1,14 @@
+features:
+  enabled: true
+  methods: [glcm, dwt]
+  source: segmented
+  normalize: true
+  glcm:
+    distances: [1, 2, 4]
+    angles: [0, 0.78539816339, 1.57079632679, 2.35619449019]
+    levels: 32
+    properties: [contrast, dissimilarity, homogeneity, energy, correlation, ASM]
+  dwt:
+    wavelet: db2
+    level: 2
+    stats: [mean, std, energy, entropy]

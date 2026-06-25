@@ -1,0 +1,13 @@
+segmentation:
+  enabled: true
+  method: lab_otsu_morphology
+  color_space: lab
+  channel: a
+  threshold: otsu
+  invert_mask: false
+  morphology:
+    opening: true
+    closing: true
+    kernel_size: 5
+    iterations: 1
+  output_mode: masked_rgb

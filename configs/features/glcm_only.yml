@@ -1,0 +1,5 @@
+features:
+  enabled: true
+  methods: [glcm]
+  source: segmented
+  normalize: true

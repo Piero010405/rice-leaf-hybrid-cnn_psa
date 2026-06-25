@@ -1,0 +1,24 @@
+services:
+  riceleaf-gpu:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: riceleaf-gpu
+    working_dir: /workspace
+    volumes:
+      - ..:/workspace
+      - ../data:/workspace/data
+      - ../runs:/workspace/runs
+      - ../outputs:/workspace/outputs
+    env_file:
+      - ../.env
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    shm_size: "8gb"
+    stdin_open: true
+    tty: true
