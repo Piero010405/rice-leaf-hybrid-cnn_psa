@@ -1,0 +1,4 @@
+comparison,metric,n_common_seeds,wilcoxon_statistic,p_value,note
+E1 vs E0,macro_f1,5,5.0,1.0,
+E2 vs E0,macro_f1,5,1.5,0.75,
+E3 vs E0,macro_f1,5,3.0,1.0,

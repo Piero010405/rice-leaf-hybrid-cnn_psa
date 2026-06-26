@@ -9,20 +9,38 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Data and generated artifacts
+# Raw/heavy data
 data/raw/
 data/interim/
 data/processed/
 data/segmented/
 data/features/
-data/splits/
+
+# Keep splits if needed for reproducibility
+# data/splits/
+
+# Heavy model artifacts
 runs/
 outputs/models/
-outputs/figures/
-outputs/tables/*.csv
-outputs/tables/*.xlsx
 *.pt
 *.pth
 *.ckpt
 *.pkl
 *.joblib
+
+# Optional: keep generated figures/tables/reports for paper
+# outputs/figures/
+# outputs/tables/*.csv
+# outputs/tables/*.xlsx
+
+# Build artifacts
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.fls
+*.fdb_latexmk
+build/
