@@ -1,0 +1,5 @@
+experiment_id,experiment_name,accuracy,macro_precision,macro_recall,macro_f1,inference_ms_per_image,num_parameters,model_size_mb,best_epoch,run_dir,seed
+E0,baseline_cnn,0.9966329966329966,0.996900826446281,0.9965437788018433,0.9967006092296116,4.911317500000223,2228996,8.737112045288086,3,runs\E0_baseline_cnn\20260625_064500_seed42,42
+E1,segmented_cnn,1.0,1.0,1.0,1.0,3.4746099999665603,2228996,8.737112045288086,4,runs\E1_segmented_cnn\20260625_070052_seed42,42
+E2,cnn_texture,1.0,1.0,1.0,1.0,5.599260625012903,2590852,10.123411178588867,2,runs\E2_cnn_texture\20260625_070945_seed42,42
+E3,proposed_segmented_cnn_texture,1.0,1.0,1.0,1.0,4.961746250000942,2590852,10.123411178588867,3,runs\E3_proposed_segmented_cnn_texture\20260625_071826_seed42,42
