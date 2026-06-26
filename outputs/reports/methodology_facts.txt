@@ -1,20 +1,62 @@
 === METHODOLOGY FACTS ===
 
 === SPLIT DISTRIBUTION ===
-train: NOT FOUND
-val: NOT FOUND
-test: NOT FOUND
-Total images across splits: 0
+train: 4150 images
+label
+Bacterial Blight    1108
+Blast               1007
+Brown Spot          1120
+Tungro               915
+
+val: 891 images
+label
+Bacterial Blight    238
+Blast               216
+Brown Spot          241
+Tungro              196
+
+test: 891 images
+label
+Bacterial Blight    238
+Blast               217
+Brown Spot          239
+Tungro              197
+
+Total images across splits: 5932
+
+=== COLUMNS IN SPLITS ===
+['image_id', 'path', 'relative_path', 'label', 'label_idx', 'phash', 'group_id', 'split']
+
+=== PHASH VALIDATION ===
+Total images: 5932
+Unique pHashes: 2927
+pHashes appearing in more than one split: 0
 
 === FEATURE FILES ===
 Directory: data\features\glcm_dwt_original
-NOT FOUND
+data\features\glcm_dwt_original\train_features_scaled.csv: rows=4150, columns=44
+Columns: ['glcm_contrast_mean', 'glcm_contrast_std', 'glcm_dissimilarity_mean', 'glcm_dissimilarity_std', 'glcm_homogeneity_mean', 'glcm_homogeneity_std', 'glcm_energy_mean', 'glcm_energy_std', 'glcm_correlation_mean', 'glcm_correlation_std', 'glcm_ASM_mean', 'glcm_ASM_std', 'dwt_cA_mean', 'dwt_cA_std', 'dwt_cA_energy', 'dwt_cA_entropy', 'dwt_L1_cH_mean', 'dwt_L1_cH_std', 'dwt_L1_cH_energy', 'dwt_L1_cH_entropy'] ...
+data\features\glcm_dwt_original\val_features_scaled.csv: rows=891, columns=44
+Columns: ['glcm_contrast_mean', 'glcm_contrast_std', 'glcm_dissimilarity_mean', 'glcm_dissimilarity_std', 'glcm_homogeneity_mean', 'glcm_homogeneity_std', 'glcm_energy_mean', 'glcm_energy_std', 'glcm_correlation_mean', 'glcm_correlation_std', 'glcm_ASM_mean', 'glcm_ASM_std', 'dwt_cA_mean', 'dwt_cA_std', 'dwt_cA_energy', 'dwt_cA_entropy', 'dwt_L1_cH_mean', 'dwt_L1_cH_std', 'dwt_L1_cH_energy', 'dwt_L1_cH_entropy'] ...
+data\features\glcm_dwt_original\test_features_scaled.csv: rows=891, columns=44
+Columns: ['glcm_contrast_mean', 'glcm_contrast_std', 'glcm_dissimilarity_mean', 'glcm_dissimilarity_std', 'glcm_homogeneity_mean', 'glcm_homogeneity_std', 'glcm_energy_mean', 'glcm_energy_std', 'glcm_correlation_mean', 'glcm_correlation_std', 'glcm_ASM_mean', 'glcm_ASM_std', 'dwt_cA_mean', 'dwt_cA_std', 'dwt_cA_energy', 'dwt_cA_entropy', 'dwt_L1_cH_mean', 'dwt_L1_cH_std', 'dwt_L1_cH_energy', 'dwt_L1_cH_entropy'] ...
 
 Directory: data\features\glcm_dwt_segmented
-NOT FOUND
+data\features\glcm_dwt_segmented\train_features_scaled.csv: rows=4150, columns=44
+Columns: ['glcm_contrast_mean', 'glcm_contrast_std', 'glcm_dissimilarity_mean', 'glcm_dissimilarity_std', 'glcm_homogeneity_mean', 'glcm_homogeneity_std', 'glcm_energy_mean', 'glcm_energy_std', 'glcm_correlation_mean', 'glcm_correlation_std', 'glcm_ASM_mean', 'glcm_ASM_std', 'dwt_cA_mean', 'dwt_cA_std', 'dwt_cA_energy', 'dwt_cA_entropy', 'dwt_L1_cH_mean', 'dwt_L1_cH_std', 'dwt_L1_cH_energy', 'dwt_L1_cH_entropy'] ...
+data\features\glcm_dwt_segmented\val_features_scaled.csv: rows=891, columns=44
+Columns: ['glcm_contrast_mean', 'glcm_contrast_std', 'glcm_dissimilarity_mean', 'glcm_dissimilarity_std', 'glcm_homogeneity_mean', 'glcm_homogeneity_std', 'glcm_energy_mean', 'glcm_energy_std', 'glcm_correlation_mean', 'glcm_correlation_std', 'glcm_ASM_mean', 'glcm_ASM_std', 'dwt_cA_mean', 'dwt_cA_std', 'dwt_cA_energy', 'dwt_cA_entropy', 'dwt_L1_cH_mean', 'dwt_L1_cH_std', 'dwt_L1_cH_energy', 'dwt_L1_cH_entropy'] ...
+data\features\glcm_dwt_segmented\test_features_scaled.csv: rows=891, columns=44
+Columns: ['glcm_contrast_mean', 'glcm_contrast_std', 'glcm_dissimilarity_mean', 'glcm_dissimilarity_std', 'glcm_homogeneity_mean', 'glcm_homogeneity_std', 'glcm_energy_mean', 'glcm_energy_std', 'glcm_correlation_mean', 'glcm_correlation_std', 'glcm_ASM_mean', 'glcm_ASM_std', 'dwt_cA_mean', 'dwt_cA_std', 'dwt_cA_energy', 'dwt_cA_entropy', 'dwt_L1_cH_mean', 'dwt_L1_cH_std', 'dwt_L1_cH_energy', 'dwt_L1_cH_entropy'] ...
 
 === RUNS AND METRICS FILES ===
-metrics.json files found: 0
+metrics.json files found: 20
+runs\E0_baseline_cnn\20260625_064500_seed42\metrics.json
+runs\E0_baseline_cnn\20260625_170435_seed123\metrics.json
+runs\E0_baseline_cnn\20260625_173340_seed2026\metrics.json
+runs\E0_baseline_cnn\20260625_180350_seed7\metrics.json
+runs\E0_baseline_cnn\20260625_183948_seed99\metrics.json
+...
 
 === CONFIG SNAPSHOT ===
 --- configs\default.yml ---

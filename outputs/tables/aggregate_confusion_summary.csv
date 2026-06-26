@@ -1,0 +1,5 @@
+experiment,label,n_prediction_files,seeds,total_predictions,correct_predictions,errors,accuracy_from_aggregate_cm,figure,csv
+E0_baseline_cnn,E0 Baseline CNN,5,"7,42,99,123,2026",4455,4441,14,0.9968574635241302,outputs\figures\aggregate_confusion_matrices\aggregate_confusion_E0_baseline_cnn.png,outputs\tables\aggregate_confusion_E0_baseline_cnn.csv
+E1_segmented_cnn,E1 Segmented CNN,5,"7,42,99,123,2026",4455,4444,11,0.9975308641975309,outputs\figures\aggregate_confusion_matrices\aggregate_confusion_E1_segmented_cnn.png,outputs\tables\aggregate_confusion_E1_segmented_cnn.csv
+E2_cnn_texture,E2 CNN + Texture,5,"7,42,99,123,2026",4455,4452,3,0.9993265993265993,outputs\figures\aggregate_confusion_matrices\aggregate_confusion_E2_cnn_texture.png,outputs\tables\aggregate_confusion_E2_cnn_texture.csv
+E3_proposed_segmented_cnn_texture,E3 Proposed Hybrid,5,"7,42,99,123,2026",4455,4444,11,0.9975308641975309,outputs\figures\aggregate_confusion_matrices\aggregate_confusion_E3_proposed_segmented_cnn_texture.png,outputs\tables\aggregate_confusion_E3_proposed_segmented_cnn_texture.csv
