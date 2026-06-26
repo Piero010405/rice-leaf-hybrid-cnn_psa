@@ -1,0 +1,80 @@
+=== METHODOLOGY FACTS ===
+
+=== SPLIT DISTRIBUTION ===
+train: NOT FOUND
+val: NOT FOUND
+test: NOT FOUND
+Total images across splits: 0
+
+=== FEATURE FILES ===
+Directory: data\features\glcm_dwt_original
+NOT FOUND
+
+Directory: data\features\glcm_dwt_segmented
+NOT FOUND
+
+=== RUNS AND METRICS FILES ===
+metrics.json files found: 0
+
+=== CONFIG SNAPSHOT ===
+--- configs\default.yml ---
+  seed: 42
+  segmented_dir: data/segmented
+  features_dir: data/features
+  image_size: 224
+  epochs: 30
+  batch_size: 8
+  learning_rate: 0.0001
+  optimizer: adamw
+  scheduler: cosine
+
+--- configs\experiments\E0_baseline_cnn.yml ---
+  description: MobileNetV2 sobre imagen RGB original.
+  use_segmented_images: false
+  use_texture_features: false
+  texture_source: original
+  type: mobilenetv2
+  texture_hidden_dim: 128
+    kernel_size: 5
+features:
+
+--- configs\experiments\E1_segmented_cnn.yml ---
+  name: segmented_cnn
+  description: MobileNetV2 sobre imagen segmentada con L*a*b* + Otsu + morfología.
+  use_segmented_images: true
+  use_texture_features: false
+  texture_source: segmented
+  type: mobilenetv2
+  texture_hidden_dim: 128
+    kernel_size: 5
+features:
+  source: segmented
+
+--- configs\experiments\E2_cnn_texture.yml ---
+  name: cnn_texture
+  description: MobileNetV2 con imagen original más vector explícito GLCM+DWT.
+  use_segmented_images: false
+  use_texture_features: true
+  texture_source: original
+  type: hybrid_mobilenet_texture
+  texture_hidden_dim: 128
+    kernel_size: 5
+features:
+
+--- configs\experiments\E3_proposed_segmented_cnn_texture.yml ---
+  name: proposed_segmented_cnn_texture
+  description: "Modelo propuesto: MobileNetV2 con imagen segmentada y vector GLCM+DWT extraído desde ROI segmentada."
+  use_segmented_images: true
+  use_texture_features: true
+  texture_source: segmented
+  type: hybrid_mobilenet_texture
+    kernel_size: 5
+features:
+  source: segmented
+  epochs: 30
+  batch_size: 8
+  learning_rate: 0.0001
+  optimizer: adamw
+  scheduler: cosine
+
+=== END ===
