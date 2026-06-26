@@ -1,0 +1,90 @@
+\documentclass[conference]{IEEEtran}
+
+% ============================================================
+% IEEE-style paper skeleton
+% Project: Rice leaf disease classification with lightweight CNN,
+% segmentation, and explicit texture features
+% ============================================================
+
+% --- Encoding and language ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+% --- Mathematics ---
+\usepackage{amsmath, amssymb, amsfonts}
+
+% --- Figures and tables ---
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{makecell}
+\usepackage{siunitx}
+\usepackage{adjustbox}
+
+% --- Algorithms / pseudo-code if needed later ---
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+% --- References and hyperlinks ---
+\usepackage{cite}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+
+% --- Utility ---
+\usepackage{xcolor}
+\usepackage{balance}
+
+% --- IEEE configuration ---
+\IEEEoverridecommandlockouts
+\sisetup{detect-weight=true, detect-family=true}
+
+% --- Custom commands ---
+\newcommand{\modelbase}{E0}
+\newcommand{\modelseg}{E1}
+\newcommand{\modeltex}{E2}
+\newcommand{\modelprop}{E3}
+\newcommand{\macroF}{Macro-F1}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+
+\begin{document}
+
+\title{Controlled Ablation Evaluation of Segmentation and Explicit Texture Features in Lightweight CNNs for Rice Leaf Disease Classification}
+
+\author{%
+\IEEEauthorblockN{D'Alessandro del Piero Sarmiento Ayala}
+\IEEEauthorblockA{Universidad San Ignacio de Loyola\\
+Course: Mathematics Applied to Computing\\
+Instructor: Dr. Manuel Augusto Yarleque Medina\\
+Email: \href{mailto:d.sarmiento@usil.pe}{d.sarmiento@usil.pe}\\
+ORCID: \href{https://orcid.org/0009-0005-1480-1671}{0009-0005-1480-1671}}
+}
+
+\maketitle
+
+\begin{abstract}
+\input{sections/00_abstract}
+\end{abstract}
+
+\begin{IEEEkeywords} Rice leaf disease classification, lightweight CNN, MobileNetV2, image segmentation, GLCM, DWT, texture features, ablation study, perceptual hash. \end{IEEEkeywords}
+
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/03_methodology}
+\input{sections/04_experimental_development}
+\input{sections/05_results}
+\input{sections/06_discussion}
+\input{sections/07_conclusions}
+\input{sections/08_reproducibility}
+
+\section*{Acknowledgment}
+
+The author thanks Universidad San Ignacio de Loyola and Dr. Manuel Augusto Yarleque Medina, instructor of the course Mathematics Applied to Computing, for providing the academic context in which this experimental study was developed.
+
+\balance
+\bibliographystyle{IEEEtran}
+\bibliography{bib/references}
+
+\end{document}
